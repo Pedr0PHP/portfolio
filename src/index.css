@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pedro H.P. — Video Editor design system
+   Vintage poster meets editorial minimalism.
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Forest green base */
+    --background: 150 60% 8%;
+    --foreground: 36 47% 92%;
+
+    --card: 150 55% 10%;
+    --card-foreground: 36 47% 92%;
+
+    --popover: 150 60% 8%;
+    --popover-foreground: 36 47% 92%;
+
+    /* Vibrant orange accent */
+    --primary: 14 100% 55%;
+    --primary-foreground: 150 60% 8%;
+
+    /* Warm off-white */
+    --secondary: 36 47% 92%;
+    --secondary-foreground: 150 60% 8%;
+
+    --muted: 150 40% 14%;
+    --muted-foreground: 36 25% 70%;
+
+    /* Saturated red for accents */
+    --accent: 4 78% 53%;
+    --accent-foreground: 36 47% 92%;
+
+    --destructive: 4 78% 53%;
+    --destructive-foreground: 36 47% 92%;
+
+    --border: 150 40% 18%;
+    --input: 150 40% 18%;
+    --ring: 14 100% 55%;
+
+    --radius: 0.25rem;
+
+    /* Custom poster tokens */
+    --ink-green: 150 60% 8%;
+    --ink-orange: 14 100% 55%;
+    --ink-red: 4 78% 53%;
+    --paper: 36 47% 92%;
+    --shadow-offset: 6px 6px 0 hsl(var(--accent));
+    --shadow-offset-sm: 4px 4px 0 hsl(var(--accent));
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    /* subtle paper grain */
+    background-image:
+      radial-gradient(hsl(var(--foreground) / 0.025) 1px, transparent 1px),
+      radial-gradient(hsl(var(--foreground) / 0.02) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Anton', 'Bebas Neue', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 0.85;
+  }
+  .font-script {
+    font-family: 'Alfa Slab One', serif;
+    letter-spacing: -0.01em;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .shadow-poster {
+    box-shadow: var(--shadow-offset);
+  }
+  .shadow-poster-sm {
+    box-shadow: var(--shadow-offset-sm);
+  }
+
+  .text-stroke-orange {
+    -webkit-text-stroke: 2px hsl(var(--primary));
+    color: transparent;
+  }
+
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+}
