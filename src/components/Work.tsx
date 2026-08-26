@@ -142,7 +142,7 @@ const Work = ({ onOpen }: Props) => {
       <section id="shorts" className="px-6 md:px-10 pb-24 md:pb-40">
         <div className="max-w-[1600px] mx-auto">
           <SectionHeader number="03" title={t.work.shortsTitle} right={t.work.shortsRight} />
-          <div className="grid grid-cols-2 gap-x-6 md:gap-x-10 gap-y-16 max-w-[900px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-12 sm:gap-y-16 max-w-[340px] sm:max-w-[900px] mx-auto">
             {shortVideos.map((p) => (
               <ProjectCard key={p.id} project={p} onOpen={onOpen} aspect="vertical" />
             ))}

@@ -64,13 +64,14 @@ const Contact = () => {
           <CopyEmailButton />
         </div>
 
-        {/* Mobile: planned break between user and domain */}
+        {/* Mobile: split across three lines so it stays large but fits */}
         <a
           href={`mailto:${EMAIL}`}
           className="sm:hidden block font-display uppercase text-foreground hover:text-primary transition-colors duration-300 leading-[0.9]"
-          style={{ fontSize: 'clamp(3rem, 14vw, 6rem)' }}
+          style={{ fontSize: 'clamp(2.5rem, 11vw, 5rem)' }}
         >
-          <span className="block whitespace-nowrap">pedrohenrique.pinheiro071@</span>
+          <span className="block whitespace-nowrap">pedrohenrique</span>
+          <span className="block whitespace-nowrap">.pinheiro071@</span>
           <span className="block whitespace-nowrap">gmail.com</span>
         </a>
         <CopyEmailButton className="sm:hidden mt-4" />
