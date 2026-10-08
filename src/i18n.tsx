@@ -33,6 +33,7 @@ type Dict = {
     p4: string;
     clients: string;
     software: string;
+    softwareNote: string;
   };
   contact: {
     label: string;
@@ -78,6 +79,7 @@ const en: Dict = {
     p4: "Available for select projects in 2026. Let's make something loud.",
     clients: 'Clients',
     software: 'Software',
+    softwareNote: 'Licensed and always on the latest version',
   },
   contact: {
     label: 'Contact',
@@ -119,10 +121,11 @@ const pt: Dict = {
     script: 'e pelo amor à coisa.',
     p1: 'Sou o Pedro, um editor que mora entre São Paulo e onde o próximo trabalho me levar.',
     p2: 'Meu trabalho vive onde ritmo e imagem se encontram. Me importo com o tempo, com a edição que você nem percebe.',
-    p3: 'Em média, já editei cerca de 70 vídeos para cada cliente com quem trabalho — volume constante, entregue uma edição de cada vez.',
+    p3: 'Em média, já editei cerca de 70 vídeos com cada cliente quem trabalho — volume constante, entregue uma edição de cada vez.',
     p4: 'Disponível para projetos selecionados em 2026. Vamos fazer algo alto.',
     clients: 'Clientes',
     software: 'Software',
+    softwareNote: 'Oficiais e na versão mais recente',
   },
   contact: {
     label: 'Contato',

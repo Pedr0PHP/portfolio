@@ -15,12 +15,27 @@ const clients = [
 ];
 const software = ['Premiere Pro', 'After Effects', 'DaVinci Resolve', 'Photoshop'];
 
-const Column = ({ title, items }: { title: string; items: string[] }) => (
+const Column = ({
+  title,
+  items,
+  note,
+  noTranslate = false,
+}: {
+  title: string;
+  items: string[];
+  note?: string;
+  noTranslate?: boolean;
+}) => (
   <div>
-    <h4 className="font-script text-primary text-lg mb-3">{title}</h4>
-    <ul className="space-y-1.5 text-sm md:text-base">
+    <h4 className="font-script text-primary text-lg mb-1">{title}</h4>
+    {note && (
+      <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground mb-3">{note}</p>
+    )}
+    <ul className={`space-y-1.5 text-sm md:text-base ${note ? '' : 'mt-3'}`}>
       {items.map((i) => (
-        <li key={i} className="text-foreground/90">{i}</li>
+        <li key={i} className="text-foreground/90" translate={noTranslate ? 'no' : undefined}>
+          {i}
+        </li>
       ))}
     </ul>
   </div>
@@ -54,7 +69,7 @@ const About = () => {
 
           <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 md:pt-4">
             <Column title={t.about.clients} items={clients} />
-            <Column title={t.about.software} items={software} />
+            <Column title={t.about.software} items={software} note={t.about.softwareNote} noTranslate />
           </div>
         </div>
       </div>

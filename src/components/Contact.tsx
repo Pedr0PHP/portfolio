@@ -52,29 +52,18 @@ const Contact = () => {
 
         <p className="font-script text-primary text-2xl md:text-3xl mb-4">{t.contact.sayHi}</p>
 
-        {/* Desktop: single line, no wrap */}
-        <div className="hidden sm:flex items-center gap-4">
+        {/* One responsive line, scales to fit every width without wrapping */}
+        <div className="flex items-center gap-3 sm:gap-4">
           <a
             href={`mailto:${EMAIL}`}
+            translate="no"
             className="inline-block font-display uppercase text-foreground hover:text-primary transition-colors duration-300 leading-[0.9] whitespace-nowrap"
-            style={{ fontSize: 'clamp(1.5rem, 4vw, 4rem)' }}
+            style={{ fontSize: 'clamp(1rem, 5vw, 4rem)' }}
           >
             {EMAIL}
           </a>
           <CopyEmailButton />
         </div>
-
-        {/* Mobile: split across three lines so it stays large but fits */}
-        <a
-          href={`mailto:${EMAIL}`}
-          className="sm:hidden block font-display uppercase text-foreground hover:text-primary transition-colors duration-300 leading-[0.9]"
-          style={{ fontSize: 'clamp(2.5rem, 11vw, 5rem)' }}
-        >
-          <span className="block whitespace-nowrap">pedrohenrique</span>
-          <span className="block whitespace-nowrap">.pinheiro071@</span>
-          <span className="block whitespace-nowrap">gmail.com</span>
-        </a>
-        <CopyEmailButton className="sm:hidden mt-4" />
 
         <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm uppercase tracking-[0.2em]">
           {socials.map((s) => (
