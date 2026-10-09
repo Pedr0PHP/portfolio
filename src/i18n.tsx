@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 export type Lang = 'en' | 'pt';
 
 type Dict = {
-  nav: { work: string; about: string; contact: string };
+  nav: { work: string; services: string; about: string; contact: string };
   hero: {
     meta: string;
     vol: string;
@@ -35,6 +35,13 @@ type Dict = {
     software: string;
     softwareNote: string;
   };
+  services: {
+    label: string;
+    from: string;
+    items: { title: string; desc: string; price: string }[];
+    note: string;
+    cta: string;
+  };
   contact: {
     label: string;
     sayHi: string;
@@ -48,7 +55,7 @@ type Dict = {
 };
 
 const en: Dict = {
-  nav: { work: 'Work', about: 'About', contact: 'Contact' },
+  nav: { work: 'Work', services: 'Services', about: 'About', contact: 'Contact' },
   hero: {
     meta: 'Est. 2024 — São Paulo / Worldwide',
     vol: 'Vol. 04 / Selected Cuts',
@@ -81,6 +88,34 @@ const en: Dict = {
     software: 'Software',
     softwareNote: 'Licensed and always on the latest version',
   },
+  services: {
+    label: 'Services',
+    from: 'from',
+    items: [
+      {
+        title: 'Standard Reels',
+        desc: 'Clean, dynamic cut for reels and shorts, with captions and soundtrack.',
+        price: 'R$ 70',
+      },
+      {
+        title: 'Dynamic Reels',
+        desc: 'Editing with motion, effects and fast pacing to hold attention.',
+        price: 'R$ 170',
+      },
+      {
+        title: 'Corporate Video',
+        desc: 'Brand presentation video with narrative and a polished, professional finish.',
+        price: 'R$ 450',
+      },
+      {
+        title: 'VSL',
+        desc: 'Video Sales Letter built to convert, with script and persuasive editing.',
+        price: 'R$ 500',
+      },
+    ],
+    note: 'Prices vary with length and complexity. Monthly packages with special conditions.',
+    cta: 'Request a quote',
+  },
   contact: {
     label: 'Contact',
     sayHi: 'say hi —',
@@ -94,7 +129,7 @@ const en: Dict = {
 };
 
 const pt: Dict = {
-  nav: { work: 'Trabalhos', about: 'Sobre', contact: 'Contato' },
+  nav: { work: 'Trabalhos', services: 'Serviços', about: 'Sobre', contact: 'Contato' },
   hero: {
     meta: 'Desde 2024 — São Paulo / Mundo',
     vol: 'Vol. 04 / Edições Selecionadas',
@@ -126,6 +161,34 @@ const pt: Dict = {
     clients: 'Clientes',
     software: 'Software',
     softwareNote: 'Oficiais e na versão mais recente',
+  },
+  services: {
+    label: 'Serviços',
+    from: 'a partir de',
+    items: [
+      {
+        title: 'Reels Padrão',
+        desc: 'Corte limpo e dinâmico para reels e shorts, com legendas e trilha.',
+        price: 'R$ 70',
+      },
+      {
+        title: 'Reels Dinâmico',
+        desc: 'Edição com motion, efeitos e ritmo acelerado para prender a atenção.',
+        price: 'R$ 170',
+      },
+      {
+        title: 'Vídeo Institucional',
+        desc: 'Vídeo de apresentação da sua marca, com narrativa e acabamento profissional.',
+        price: 'R$ 450',
+      },
+      {
+        title: 'VSL',
+        desc: 'Video Sales Letter voltado para conversão, com roteiro e edição persuasiva.',
+        price: 'R$ 500',
+      },
+    ],
+    note: 'Valores variam conforme duração e complexidade. Pacotes mensais com condição especial.',
+    cta: 'Solicitar orçamento',
   },
   contact: {
     label: 'Contato',

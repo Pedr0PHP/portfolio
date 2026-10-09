@@ -3,6 +3,7 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Work from '@/components/Work';
 import About from '@/components/About';
+import Services from '@/components/Services';
 import Contact from '@/components/Contact';
 import VideoLightbox from '@/components/VideoLightbox';
 import { I18nProvider } from '@/i18n';
@@ -18,6 +19,7 @@ const Index = () => {
           <Hero />
           <Work onOpen={setVideoId} />
           <About />
+          <Services />
         </main>
         <Contact />
         <VideoLightbox videoId={videoId} onClose={() => setVideoId(null)} />

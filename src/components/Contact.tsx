@@ -47,7 +47,7 @@ const Contact = () => {
     <footer id="contact" className="px-6 md:px-10 pb-10 pt-10 border-t border-border">
       <div className="max-w-[1600px] mx-auto">
         <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-10">
-          05 — {t.contact.label}
+          06 — {t.contact.label}
         </p>
 
         <p className="font-script text-primary text-2xl md:text-3xl mb-4">{t.contact.sayHi}</p>

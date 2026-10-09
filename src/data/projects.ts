@@ -8,6 +8,8 @@ export type Project = {
   embed?: boolean;
   provider?: 'youtube' | 'vimeo' | 'drive';
   embedUrl?: string;
+  /** Custom CSS aspect-ratio for the card (e.g. '2 / 1'); overrides the section default. */
+  aspectRatio?: string;
 };
 
 // Placeholder projects with real YouTube IDs (public videos)
@@ -56,15 +58,14 @@ export const motionProjects: Project[] = [
     embedUrl: 'https://drive.google.com/file/d/1ZMm5GFAUA9FtZANWhEYrYNGt8eYKxtjZ/preview',
   },
   {
-    id: 'drive-motion-2',
-    title: 'Motion Cut 02',
-    client: 'Private Cut',
+    id: 'motion-2',
+    title: 'Vídeo para telão',
+    client: '@adivina.pizzaria',
     year: 2026,
     category: 'Motion Graphics',
-    youtubeId: '',
+    youtubeId: 'zVSjbM5SnRo',
     embed: true,
-    provider: 'drive',
-    embedUrl: 'https://drive.google.com/file/d/1XVyt7rZfLne-p4dNbC1Ud8SgckasXXOX/preview',
+    provider: 'youtube',
   },
 ];
 
@@ -126,8 +127,8 @@ export const shortVideos: Project[] = [
   },
   {
     id: 'drive-short-4',
-    title: 'Vídeo curto 04',
-    client: 'Private Cut',
+    title: 'Erros de Gravação',
+    client: '@helenmagalhaes.fisio',
     year: 2025,
     category: 'Short Video',
     youtubeId: '',
@@ -137,8 +138,8 @@ export const shortVideos: Project[] = [
   },
   {
     id: 'drive-short-5',
-    title: 'Vídeo curto 05',
-    client: 'Private Cut',
+    title: 'Aniversário',
+    client: '@alinedermatos',
     year: 2025,
     category: 'Short Video',
     youtubeId: '',
@@ -148,8 +149,8 @@ export const shortVideos: Project[] = [
   },
   {
     id: 'drive-short-6',
-    title: 'Vídeo curto 06',
-    client: 'Private Cut',
+    title: 'Consulta',
+    client: '@drapatriciaribeiro',
     year: 2025,
     category: 'Short Video',
     youtubeId: '',
@@ -159,8 +160,8 @@ export const shortVideos: Project[] = [
   },
   {
     id: 'drive-short-7',
-    title: 'Vídeo curto 07',
-    client: 'Private Cut',
+    title: 'Propaganda',
+    client: '@adivina.pizzaria',
     year: 2025,
     category: 'Short Video',
     youtubeId: '',
@@ -170,8 +171,8 @@ export const shortVideos: Project[] = [
   },
   {
     id: 'drive-short-8',
-    title: 'Vídeo curto 08',
-    client: 'Private Cut',
+    title: 'Propaganda',
+    client: '@adivina.pizzaria',
     year: 2025,
     category: 'Short Video',
     youtubeId: '',
@@ -181,8 +182,8 @@ export const shortVideos: Project[] = [
   },
   {
     id: 'drive-short-9',
-    title: 'Vídeo curto 09',
-    client: 'Private Cut',
+    title: 'Propaganda',
+    client: '@adivina.pizzaria',
     year: 2025,
     category: 'Short Video',
     youtubeId: '',

@@ -12,6 +12,8 @@ const clients = [
   'Agência Iluminar',
   '@adivina.pizzaria',
   '@turismus',
+  '@helenmagalhaes.fisio',
+  '@alinedermatos',
 ];
 const software = ['Premiere Pro', 'After Effects', 'DaVinci Resolve', 'Photoshop'];
 

@@ -23,6 +23,8 @@ const ProjectCard = ({
   const thumb = `https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg`;
   const fallback = `https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg`;
   const aspectClass = aspect === 'vertical' ? 'aspect-[9/16]' : 'aspect-video';
+  const frameClass = project.aspectRatio ? '' : aspectClass;
+  const frameStyle = project.aspectRatio ? { aspectRatio: project.aspectRatio } : undefined;
 
   if (project.embed) {
     const src =
@@ -30,7 +32,7 @@ const ProjectCard = ({
       `https://www.youtube.com/embed/${project.youtubeId}?rel=0&modestbranding=1&playsinline=1`;
     return (
       <div className="group text-left block w-full">
-        <div className={`relative w-full ${aspectClass} overflow-hidden bg-muted`}>
+        <div className={`relative w-full ${frameClass} overflow-hidden bg-muted`} style={frameStyle}>
           <iframe
             src={src}
             title={project.title}
@@ -64,7 +66,7 @@ const ProjectCard = ({
       className="group text-left block w-full"
       aria-label={`Play ${project.title}`}
     >
-      <div className={`relative w-full ${aspectClass} overflow-hidden bg-muted`}>
+      <div className={`relative w-full ${frameClass} overflow-hidden bg-muted`} style={frameStyle}>
         <img
           src={thumb}
           onError={(e) => {
