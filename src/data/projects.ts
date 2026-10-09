@@ -71,17 +71,6 @@ export const motionProjects: Project[] = [
 
 export const shortVideos: Project[] = [
   {
-    id: 'drive-short-2',
-    title: 'Preview',
-    client: 'Up Scale',
-    year: 2026,
-    category: 'Short Video',
-    youtubeId: '',
-    embed: true,
-    provider: 'drive',
-    embedUrl: 'https://drive.google.com/file/d/11elRLzs9wxWZAhW901ruHnAh34qL2jzp/preview',
-  },
-  {
     id: 'drive-short-3',
     title: 'Consulta',
     client: '@drhaendelfabrini',
