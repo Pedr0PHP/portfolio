@@ -44,7 +44,9 @@ const Column = ({
 );
 
 const About = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const localizedClients =
+    lang === 'en' ? clients.map((c) => (c === 'Agência Iluminar' ? 'Iluminar Agency' : c)) : clients;
   return (
     <section id="about" className="px-6 md:px-10 pb-24 md:pb-40">
       <div className="max-w-[1600px] mx-auto border-t border-border pt-6">
@@ -70,7 +72,7 @@ const About = () => {
           </div>
 
           <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 md:pt-4">
-            <Column title={t.about.clients} items={clients} />
+            <Column title={t.about.clients} items={localizedClients} />
             <Column title={t.about.software} items={software} note={t.about.softwareNote} noTranslate />
           </div>
         </div>

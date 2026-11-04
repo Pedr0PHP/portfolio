@@ -9,6 +9,15 @@ const PlayIcon = () => (
   </svg>
 );
 
+// English translations for Portuguese project titles (@handles and proper names stay as-is)
+const TITLE_EN: Record<string, string> = {
+  'Vídeo para telão': 'Big Screen Video',
+  'Consulta': 'Appointment',
+  'Erros de Gravação': 'Bloopers',
+  'Aniversário': 'Birthday',
+  'Propaganda': 'Ad',
+};
+
 const ProjectCard = ({
   project,
   onOpen,
@@ -20,6 +29,8 @@ const ProjectCard = ({
   aspect?: 'video' | 'vertical';
   hideMeta?: boolean;
 }) => {
+  const { lang } = useI18n();
+  const title = lang === 'en' ? TITLE_EN[project.title] ?? project.title : project.title;
   const thumb = `https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg`;
   const fallback = `https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg`;
   const aspectClass = aspect === 'vertical' ? 'aspect-[9/16]' : 'aspect-video';
@@ -35,7 +46,7 @@ const ProjectCard = ({
         <div className={`relative w-full ${frameClass} overflow-hidden bg-muted`} style={frameStyle}>
           <iframe
             src={src}
-            title={project.title}
+            title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
             allowFullScreen
             className="absolute inset-0 w-full h-full"
@@ -48,7 +59,7 @@ const ProjectCard = ({
             </p>
             <div className="mt-1.5 flex items-baseline justify-between gap-4">
               <h3 className="font-display uppercase text-2xl md:text-4xl leading-none text-foreground">
-                {project.title}
+                {title}
               </h3>
               <span className="shrink-0 text-[11px] uppercase tracking-[0.22em] text-primary">
                 {project.category}
@@ -64,7 +75,7 @@ const ProjectCard = ({
     <button
       onClick={() => onOpen(project.youtubeId)}
       className="group text-left block w-full"
-      aria-label={`Play ${project.title}`}
+      aria-label={`Play ${title}`}
     >
       <div className={`relative w-full ${frameClass} overflow-hidden bg-muted`} style={frameStyle}>
         <img
@@ -73,7 +84,7 @@ const ProjectCard = ({
             const img = e.currentTarget;
             if (img.src !== fallback) img.src = fallback;
           }}
-          alt={project.title}
+          alt={title}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
@@ -92,7 +103,7 @@ const ProjectCard = ({
           </p>
           <div className="mt-1.5 flex items-baseline justify-between gap-4">
             <h3 className="font-display uppercase text-2xl md:text-4xl leading-none text-foreground transition-colors group-hover:text-primary">
-              {project.title}
+              {title}
             </h3>
             <span className="shrink-0 text-[11px] uppercase tracking-[0.22em] text-primary">
               {project.category}
